@@ -1,9 +1,0 @@
-import nltk
-from nltk.tokenize import word_tokenize, sent_tokenize
-text = "Tokenization is an important step in natural language processing. It breaks text into words or subwords."
-words = word_tokenize(text)
-sentences = sent_tokenize(text)
-print("Tokenized words:")
-print(words)
-print("\nTokenized sentences:")
-print(sentences)
