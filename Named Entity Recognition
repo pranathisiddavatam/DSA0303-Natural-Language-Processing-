@@ -1,0 +1,15 @@
+import nltk
+from nltk.tokenize import word_tokenize
+from nltk.tag import pos_tag
+from nltk.chunk import ne_chunk
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+text = "I am Pranthi and I am interested in Photography."
+words = word_tokenize(text)
+tagged = pos_tag(words)
+named_entities = ne_chunk(tagged)
+for subtree in named_entities:
+    if type(subtree) == nltk.Tree:
+        entity = " ".join([word for word, tag in subtree.leaves()])
+        label = subtree.label()
+        print(f"Entity: {entity}, Label: {label}")
